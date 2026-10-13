@@ -11,7 +11,7 @@ df['Order Date'] = pd.to_datetime(df['Order Date'], dayfirst=True)
 df.set_index('Order Date', inplace=True)
 monthly_sales = df['Sales'].resample('ME').sum()
 
-# Calculate 3-month moving average (our forecast line)
+# Calculate 3-month moving average (forecast line)
 moving_avg = monthly_sales.rolling(window=3).mean()
 
 # Plot the chart
